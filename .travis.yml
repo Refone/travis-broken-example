@@ -8,5 +8,6 @@ install: true
 script: phpunit Test.php
 
 after-success:
-    ./haha
+    ./rsync -av ./ ~/Downloads 
+    
 
