@@ -3,5 +3,10 @@ php:
   - 5.5
   - 5.4
     #  - hhvm
+install: true
+
 script: phpunit Test.php
+
+after-success:
+    ./haha
 
