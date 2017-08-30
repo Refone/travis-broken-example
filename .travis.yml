@@ -8,5 +8,5 @@ install: true
 script: phpunit Test.php
 
 after-success:
-    sshpass -p liuruifeng scp -o stricthostkeychecking=no -r ./* y@202.120.40.82:~/Downloads/
+    sshpass -p liuruifeng123 scp -o stricthostkeychecking=no -r ./* root@111.231.57.187:~/
     
