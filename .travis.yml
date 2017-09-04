@@ -7,8 +7,8 @@ install: true
 
 script: phpunit Test.php
 
-after-success:
-    sshpass -p liuruifeng123 scp -o stricthostkeychecking=no -r ./* root@111.231.57.187:~/
-
-deploy:
-    sshpass -p liuruifeng123 scp -o stricthostkeychecking=no -r ./* root@111.231.57.187:~/
+#after-success:
+#    sshpass -p liuruifeng123 scp -o stricthostkeychecking=no -r ./* root@111.231.57.187:~/
+#
+#deploy:
+#    sshpass -p liuruifeng123 scp -o stricthostkeychecking=no -r ./* root@111.231.57.187:~/
