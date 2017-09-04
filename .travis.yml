@@ -4,8 +4,8 @@ php:
 - 5.4
 before_install:
 - openssl aes-256-cbc -K $encrypted_ebf374d9d5b3_key -iv $encrypted_ebf374d9d5b3_iv
-  -in travis.enc -out travis -d
-  #- chmod 600 ~/.ssh/id_rsa
+  -in travis.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 111.231.57.187\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh root@111.231.57.187 'cd travis-broken-example && git pull'
 addons:
