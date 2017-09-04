@@ -3,13 +3,13 @@ php:
 - 5.5
 - 5.4
 before_install:
-- ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
-  #- openssl aes-256-cbc -K $encrypted_ebf374d9d5b3_key -iv $encrypted_ebf374d9d5b3_iv
-  #-in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_ebf374d9d5b3_key -iv $encrypted_ebf374d9d5b3_iv
+  -in travis.enc -out travis -d
 - chmod 600 ~/.ssh/id_rsa
-- echo -e "Host 111.231.57.187\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh root@111.231.57.187 'cd travis-broken-example && git pull' \n liuruifeng123 \n
-
+  #- echo -e "Host 111.231.57.187\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh root@111.231.57.187 'cd travis-broken-example && git pull'
+addons:
+  ssh_known_hosts: 111.231.57.187
 install: true
 script: phpunit Test.php
 after-success: ssh root@111.231.57.187 'cd travis-broken-example && git pull'
