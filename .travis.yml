@@ -8,8 +8,8 @@ before_install:
   #-in id_rsa.enc -out ~\/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 111.231.57.187\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh root@111.231.57.187 'cd travis-broken-example && git pull'
-- liuruifeng123
+- ssh root@111.231.57.187 'cd travis-broken-example && git pull' \n liuruifeng123 \n
+
 install: true
 script: phpunit Test.php
 after-success: ssh root@111.231.57.187 'cd travis-broken-example && git pull'
