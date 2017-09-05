@@ -12,5 +12,5 @@ addons:
   ssh_known_hosts: 111.231.57.187
 install: true
 script: phpunit Test.php
-after-success: 
+after_success: 
 - ssh root@111.231.57.187 'cd travis-broken-example && git pull'
